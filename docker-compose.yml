@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  sovereign-gateway:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - REDIS_URL=redis://redis:6379
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_ENDPOINT=https://api.openai.com/v1/chat/completions
+      - LOCAL_MODEL_ENDPOINT=http://host.docker.internal:11434/v1/chat/completions
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"

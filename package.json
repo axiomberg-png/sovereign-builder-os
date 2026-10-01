@@ -1,0 +1,18 @@
+{
+  "name": "sovereign-builder-os",
+  "version": "1.0.0",
+  "description": "Zero Data Retention Async AI Gateway",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ioredis": "^5.4.1",
+    "ws": "^8.18.0"
+  }
+}
